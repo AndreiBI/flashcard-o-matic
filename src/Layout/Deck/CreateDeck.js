@@ -44,12 +44,12 @@ function CreateNewDeck() {
                 <div className="form-group">
                     <label>Name</label>
                     <input
-                        id="deckName"
-                        name="deckName"
+                        id="name"
+                        name="name"
                         className="form-control"
                         onChange={handleInputChange}
                         type="text"
-                        value={deckDetails.deckName}
+                        value={deckDetails.name}
                         placeholder="Deck name"
                         required
                     />
@@ -57,11 +57,11 @@ function CreateNewDeck() {
                 <div className="form-group">
                     <label>Description</label>
                     <textarea
-                        id="deckDescription"
-                        name="deckDescription"
+                        id="description"
+                        name="description"
                         className="form-control"
                         onChange={handleInputChange}
-                        value={deckDetails.deckDescription}
+                        value={deckDetails.description}
                         placeholder="Brief description of the deck"
                         required
                     />
