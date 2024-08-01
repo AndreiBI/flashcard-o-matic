@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import CardForm from "./CardForm";
 import { readDeck, readCard, updateCard } from '../../utils/api';
 
-export const EditCard = () => {
+function EditCard() {
     const { deckId, cardId } = useParams();
     const navigate = useNavigate();
     const initialDeckDetails = {

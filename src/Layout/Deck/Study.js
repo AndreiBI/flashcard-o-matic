@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { readDeck } from "../../utils/api/index";
 
-export const Study = () => {
+function Study() {
     const [currentDeck, setCurrentDeck] = useState({});
     const [cardList, setCardList] = useState([]);
     const [currentCardNumber, setCurrentCardNumber] = useState(1);

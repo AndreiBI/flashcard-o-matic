@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CardForm = ({ card, handleDone, handleChange, handleSubmit }) => {
+function CardForm( card, handleDone, handleChange, handleSubmit) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-group">

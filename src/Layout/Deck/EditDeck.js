@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { readDeck, updateDeck } from "../../utils/api";
 
-function ModifyDeck() {
+function EditDeck() {
     const { deckId } = useParams();
     const [currentDeck, setCurrentDeck] = useState(null);
     const [deckForm, setDeckForm] = useState(null);
@@ -102,4 +102,4 @@ function ModifyDeck() {
     );
 }
 
-export default ModifyDeck;
+export default EditDeck;
