@@ -13,9 +13,9 @@ function EditCard() {
     };
     const initialCardDetails = {
         id: "",
-        frontText: "",
-        backText: "",
-        associatedDeckId: "",
+        front: "",
+        back: "",
+        deckId: "",
     };
     const [currentCard, setCurrentCard] = useState(initialCardDetails);
     const [currentDeck, setCurrentDeck] = useState(initialDeckDetails);

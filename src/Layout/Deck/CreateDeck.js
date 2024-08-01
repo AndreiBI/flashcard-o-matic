@@ -5,8 +5,8 @@ import { createDeck } from "../../utils/api/index";
 function CreateNewDeck() {
     const navigate = useNavigate();
     const initialDeckState = {
-        deckName: "",
-        deckDescription: ""
+        name: "",
+        description: ""
     };
     const [deckDetails, setDeckDetails] = useState(initialDeckState);
     const abortController = new AbortController();

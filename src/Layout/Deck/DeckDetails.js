@@ -61,63 +61,61 @@ function DeckDetails() {
         navigate(`/decks/${deckId}/cards/${card.id}/edit`);
     }
 
-    if (deckCards.length > 0) {
-        return (
-            <div>
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="breadcrumb-item">
-                        <Link to={`/decks/${deckId}`}>{currentDeck.name}</Link>
-                    </li>
-                </ol>
-                <div className="card">
-                    <div className="card-body">
-                        <h2 className="card-title">{currentDeck.name}</h2>
-                        <p>{currentDeck.description}</p>
-                        <button onClick={handleDeckEdit} className="btn btn-secondary">
-                            Edit
-                        </button>
-                        <button onClick={handleDeckStudy} className="btn btn-primary">
-                            Study
-                        </button>
-                        <button onClick={handleCardAdd} className="btn btn-primary">
-                            Add Cards
-                        </button>
-                        <button onClick={() => handleDeckDelete(currentDeck)} className="btn btn-danger">
-                            Delete
-                        </button>
-                    </div>
+    return (
+        <div>
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                    <Link to="/">Home</Link>
+                </li>
+                <li className="breadcrumb-item">
+                    <Link to={`/decks/${deckId}`}>{currentDeck.name}</Link>
+                </li>
+            </ol>
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">{currentDeck.name}</h2>
+                    <p>{currentDeck.description}</p>
+                    <button onClick={handleDeckEdit} className="btn btn-secondary">
+                        Edit
+                    </button>
+                    <button onClick={handleDeckStudy} className="btn btn-primary">
+                        Study
+                    </button>
+                    <button onClick={handleCardAdd} className="btn btn-primary">
+                        Add Cards
+                    </button>
+                    <button onClick={() => handleDeckDelete(currentDeck)} className="btn btn-danger">
+                        Delete
+                    </button>
                 </div>
-                <h1>Cards</h1>
-                {deckCards.map((card) => {
-                    return (
-                        <div className="card-deck" key={card.id}>
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col">{card.front}</div>
-                                        <div className="col">{card.back}</div>
-                                    </div>
-                                    <div className="container row">
-                                        <button onClick={() => handleCardEdit(card)} className="btn btn-secondary">
-                                            Edit
-                                        </button>
-                                        <button onClick={() => handleCardDelete(card)} className="btn btn-danger">
-                                            Delete
-                                        </button>
-                                    </div>
+            </div>
+            <h1>Cards</h1>
+            {deckCards.length > 0 ? (
+                deckCards.map((card) => (
+                    <div className="card-deck" key={card.id}>
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="row">
+                                    <div className="col">{card.front}</div>
+                                    <div className="col">{card.back}</div>
+                                </div>
+                                <div className="container row">
+                                    <button onClick={() => handleCardEdit(card)} className="btn btn-secondary">
+                                        Edit
+                                    </button>
+                                    <button onClick={() => handleCardDelete(card)} className="btn btn-danger">
+                                        Delete
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    );
-                })}
-            </div>
-        );
-    } else {
-        return null;
-    }
+                    </div>
+                ))
+            ) : (
+                <p>No cards available.</p>
+            )}
+        </div>
+    );
 }
 
 export default DeckDetails;

@@ -44,6 +44,7 @@ function AddCard() {
     }
 
     function handleDoneClick() {
+        // navigate(`/decks/${deckId}`);
         navigate(`/decks/${deckId}`);
     }
 
