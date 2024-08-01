@@ -60,10 +60,11 @@ function AddCard() {
                 <li className="breadcrumb-item active">Add Card</li>
             </ol>
             <CardForm
-                cardData={cardData}
-                onChange={handleInputChange}
-                onDone={handleDoneClick}
-                onSubmit={handleFormSubmit} />
+                card={cardData}
+                handleChange={handleInputChange}
+                handleDone={handleDoneClick}
+                handleSubmit={handleFormSubmit}
+            />
         </div>
     );
 }

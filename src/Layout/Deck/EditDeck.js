@@ -75,6 +75,7 @@ function EditDeck() {
                         name="name"
                         onChange={handleInputChange}
                         value={deckForm.name}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -85,6 +86,7 @@ function EditDeck() {
                         name="description"
                         onChange={handleInputChange}
                         value={deckForm.description}
+                        required
                     />
                 </div>
                 <button

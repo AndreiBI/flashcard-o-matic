@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardForm( card, handleDone, handleChange, handleSubmit) {
+function CardForm( {card, handleChange, handleDone, handleSubmit} ) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -10,7 +10,9 @@ function CardForm( card, handleDone, handleChange, handleSubmit) {
                     name="front"
                     className="form-control"
                     onChange={handleChange}
-                    value={card.front} />
+                    value={card.front}
+                    required
+                />
             </div>
             <div className="form group">
                 <label>Back</label>
@@ -19,14 +21,15 @@ function CardForm( card, handleDone, handleChange, handleSubmit) {
                     name="back"
                     className="form-control"
                     onChange={handleChange}
-                    type="text"
-                    value={card.back} />
+                    value={card.back}
+                    required
+                />
             </div>
             <button className="btn btn-secondary" onClick={handleDone}>
                 {card.id ? 'Cancel' : 'Done'}
             </button>
             <button className="btn btn-primary" type="submit" onClick={handleSubmit}>
-                Save
+                {card.id ? "Submit" : "Save"}
             </button>
         </form>
     );

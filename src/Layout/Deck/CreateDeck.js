@@ -51,6 +51,7 @@ function CreateNewDeck() {
                         type="text"
                         value={deckDetails.deckName}
                         placeholder="Deck name"
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -62,6 +63,7 @@ function CreateNewDeck() {
                         onChange={handleInputChange}
                         value={deckDetails.deckDescription}
                         placeholder="Brief description of the deck"
+                        required
                     />
                 </div>
                 <button
